@@ -1,9 +1,9 @@
 <svg
   class={Astro.props.class}
   fill="none"
-  viewBox="0 0 634 800"
   role="img"
   aria-label="Runa Hagal"
+  viewBox="0 0 634 800"
 >
   <path
     id="hagal-rune"
@@ -14,8 +14,9 @@
   ></path>
   <style>
     @keyframes dash {
-      70% {
+      75% {
         fill-opacity: 0;
+        stroke-width: 8;
       }
       100% {
         fill-opacity: 100%;
@@ -26,7 +27,7 @@
 
     #hagal-rune {
       fill-opacity: 0;
-      stroke-dasharray: 1300;
+      stroke-dasharray: 1000;
       stroke-dashoffset: 1300;
       animation: dash 3s ease-in forwards;
     }
