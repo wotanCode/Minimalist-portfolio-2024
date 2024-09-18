@@ -3,6 +3,7 @@ node_modules/
 dist/
 public/
 .vscode/
+.astro/
 
 #Files
 pnpm-lock.yaml
