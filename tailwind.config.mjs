@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Colores para tema oscuro
-        primary: "#002341", //ESTE SI
-        secondary: "#eee",
+        // Colores para tema oscuro https://colorhunt.co/palette/0306373c0753720455910a67
+        primary: "#910A67",
+        secondary: "#720455",
+        accent: "#3C0753",
+        background: "#030637",
       },
     },
   },
