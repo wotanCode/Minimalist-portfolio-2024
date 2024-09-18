@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "format": "pnpm exec prettier . --write",
+    "format": "prettier --write src",
     "format:check": "prettier --check src",
     "dev": "astro dev",
     "start": "astro dev",
