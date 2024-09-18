@@ -1,0 +1,10 @@
+# Directories
+node_modules/
+dist/
+public/
+.vscode/
+
+#Files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
