@@ -1,0 +1,15 @@
+---
+interface Props {
+  text: string;
+  className?: string;
+}
+
+const { text, className } = Astro.props;
+---
+
+<li
+  class={`w-full h-full flex relative m-auto p-8 cursor-pointer text-secondary transition-all hover:scale-105 ${className}`}
+>
+  <div class="absolute bg-primary w-full h-full skew-x-12"></div>
+  <span class="ml-6 mt-4 absolute text-2xl">{text}</span>
+</li>
