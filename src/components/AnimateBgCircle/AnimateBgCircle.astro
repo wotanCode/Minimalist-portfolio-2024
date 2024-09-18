@@ -3,13 +3,19 @@ import HagalRune from "@/components/HagalRune/HagalRune.astro";
 ---
 
 <div class="coin-container">
-  <div class="relative w-52 h-52 coin">
+  <div
+    class="relative flex justify-center items-center w-52 h-52 coin"
+    role="img"
+  >
     <div
-      class="rounded-full grow-0 shrink-0 absolute flex justify-center items-center w-52 h-52 bg-slate-100 coin-face"
+      class="rounded-full grow-0 shrink-0 absolute w-52 h-52 bg-secondary coin-face"
       role="img"
     >
-      <HagalRune class="text-black w-44 h-44" />
     </div>
+
+    <HagalRune
+      class="absolute justify-center text-primary w-44 h-44 coin-face"
+    />
 
     <img
       id="pedro-yanez-photo"
@@ -26,7 +32,7 @@ import HagalRune from "@/components/HagalRune/HagalRune.astro";
       transform: rotateY(0deg);
     }
     100% {
-      transform: rotateY(180deg); /* Gira 180 grados para el efecto cara/cruz */
+      transform: rotateY(180deg);
     }
   }
 
