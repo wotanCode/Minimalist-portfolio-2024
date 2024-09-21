@@ -1,10 +1,14 @@
 ---
-import Menu from "@/modules/navbar/Menu/Menu.astro";
 import AnimateBgCircle from "@/modules/heroSection/AnimateBgCircle/AnimateBgCircle.astro";
-import Description from "@/modules/aboutme/description/Description.astro";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
 ---
 
-<section class="flex flex-col gap-6">
+<section class=`flex flex-col gap-6 ${className}`>
   <div class="flex gap-6">
     <AnimateBgCircle />
     <div class="flex flex-col justify-center">
@@ -13,7 +17,3 @@ import Description from "@/modules/aboutme/description/Description.astro";
     </div>
   </div>
 </section>
-
-<div>
-  <Menu />
-</div>
