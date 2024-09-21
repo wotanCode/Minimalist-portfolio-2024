@@ -5,10 +5,11 @@ export default {
     extend: {
       colors: {
         // Colores para tema oscuro https://colorhunt.co/palette/0306373c0753720455910a67
-        primary: "#910A67",
-        secondary: "#720455",
-        accent: "#3C0753",
-        background: "#030637",
+        primary: "#910A67", // TODO
+        secondary: "#720455", // TODO
+        hagalRune: "#002441",
+        background: "#13151a",
+        backgroundWhite: "#eae5d4", // TODO: Mover a estilos de temas cuando exista.
       },
     },
   },
