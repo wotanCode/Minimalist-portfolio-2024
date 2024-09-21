@@ -1,0 +1,30 @@
+---
+
+---
+
+<article class="mt-12">
+  <p class="text-2xl">
+    ¡Hola! Soy Pedro Yanez. Tengo aproximadamente <span id="experience"></span> años
+    de experiencia en la industria TI. Me apasiona programar, resolver problemas
+    y aprender nuevas tecnologías que me permitan crecer profesionalmente. Además
+    de mis habilidades técnicas, disfruto de la práctica de artes marciales, tocar
+    la guitarra, jugar ajedrez, entre otras cosas. ¡Te invito a conocer más sobre
+    mí! Gracias por pasarte.
+  </p>
+</article>
+
+<script>
+  const startTI = 1528243200;
+  const now = Math.floor(Date.now() / 1000);
+  const differenceInSeconds = now - startTI;
+  const secondsPerYear = 31557600;
+  const timeToStart = (differenceInSeconds / secondsPerYear).toFixed();
+
+  // Asigna el valor calculado al span
+  const experienceElement = document.getElementById(
+    "experience"
+  ) as HTMLElement;
+  experienceElement.textContent = timeToStart;
+</script>
+
+<!-- TODO: Pasar el ID de la experiencia a constantes. -->
