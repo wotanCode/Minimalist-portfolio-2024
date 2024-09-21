@@ -1,5 +1,5 @@
 ---
-import HagalRune from "@/components/HagalRune/HagalRune.astro";
+import HagalRune from "@/modules/heroSection/HagalRune/HagalRune.astro";
 ---
 
 <div class="coin-container">
@@ -7,14 +7,15 @@ import HagalRune from "@/components/HagalRune/HagalRune.astro";
     class="relative flex justify-center items-center w-52 h-52 coin"
     role="img"
   >
+    <!-- TODO: Recordar cambiar el bg-backgroundWhite cuando existan temas. -->
     <div
-      class="rounded-full grow-0 shrink-0 absolute w-52 h-52 bg-background coin-face"
+      class="rounded-full grow-0 shrink-0 absolute w-52 h-52 bg-backgroundWhite coin-face"
       role="img"
     >
     </div>
 
     <HagalRune
-      class="absolute justify-center text-slate-100 w-44 h-44 coin-face"
+      class="absolute justify-center text-hagalRune w-44 h-44 coin-face"
     />
 
     <img
