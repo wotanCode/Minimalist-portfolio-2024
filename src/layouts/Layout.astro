@@ -1,6 +1,9 @@
 ---
-import SwitchTheme from "@/modules/theme/SwitchTheme/SwitchTheme.astro";
+import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/jost";
+
+import SwitchTheme from "@/modules/theme/SwitchTheme/SwitchTheme.astro";
+import Seo from "@/modules/seo/Seo.astro";
 
 interface Props {
   title: string;
@@ -13,16 +16,15 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Portafolio de Pedro Yanez @pedroelhumano"
-    />
+
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- <meta name="generator" content={Astro.generator} /> averiguar que es esto -->
-    <title>{title}</title>
+    <!-- TODO: verificar si SEO debe estar aquí enviarlo a otro componente que use el layouut -->
+    <Seo title={title} />
+    <ViewTransitions />
   </head>
-  <body class="bg-slate-950 text-slate-200">
+  <body class="bg-background text-slate-200">
     <div class="max-w-6xl mx-auto mt-48">
       <slot />
     </div>
