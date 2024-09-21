@@ -1,14 +1,8 @@
 ---
 import ButtonMenu from "@/modules/navbar/ButtonMenu/ButtonMenu.astro";
-
-interface Props {
-  className?: string;
-}
-
-const { className } = Astro.props;
 ---
 
-<nav class=`mx-auto ${className}`>
+<nav class=`mx-auto`>
   <ul class="w-full flex justify-between gap-4">
     <ButtonMenu linkTo="/" text="Sobre mi" />
     <ButtonMenu linkTo="/projects" text="Proyectos" />

@@ -2,14 +2,13 @@
 interface Props {
   text: string;
   linkTo?: string;
-  className?: string;
 }
 
-const { text, linkTo, className } = Astro.props;
+const { text, linkTo } = Astro.props;
 ---
 
 <li
-  class={`w-full h-full flex relative m-auto p-8 cursor-pointer text-slate-100 transition-all hover:scale-105 ${className}`}
+  class={`w-full h-full flex relative m-auto p-8 cursor-pointer text-slate-100 transition-all hover:scale-105`}
 >
   <a href={linkTo}>
     <div class="absolute bg-secondary w-full h-full skew-x-12"></div>
