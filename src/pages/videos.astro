@@ -2,7 +2,9 @@
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/modules/heroSection/Hero/Hero.astro";
 
-const title = "Pedro Yanez";
+import { PEDROYANEZ } from "@/const/const";
+
+const title = `${PEDROYANEZ} - Videos`; //TODO: aplicar internalización
 ---
 
 <Layout title={title}>
