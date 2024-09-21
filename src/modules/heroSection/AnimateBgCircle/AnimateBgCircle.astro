@@ -1,8 +1,14 @@
 ---
 import HagalRune from "@/modules/heroSection/HagalRune/HagalRune.astro";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
 ---
 
-<div class="coin-container">
+<div class=`coin-container ${className}`>
   <div
     class="relative flex justify-center items-center w-52 h-52 coin"
     role="img"
