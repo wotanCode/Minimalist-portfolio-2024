@@ -1,0 +1,17 @@
+---
+import HagalRune from "@/modules/heroSection/HagalRune/HagalRune.astro";
+---
+
+<!-- TODO: Recordar cambiar el bg-backgroundWhite cuando existan temas. -->
+<div
+  class=`absolute flex rounded-full grow-0 shrink-0 w-52 h-52 bg-backgroundWhite coin-face`
+  role="img"
+>
+  <HagalRune class="m-auto text-hagalRune w-44 h-44" />
+</div>
+
+<style>
+  .coin-face {
+    backface-visibility: hidden;
+  }
+</style>
