@@ -1,15 +1,18 @@
 ---
-// import HagalRuneCircle from "../HagalRuneCircle/HagalRuneCircle.astro";
+import { Image } from "astro:assets";
+
 import HagalRuneCircle from "@/modules/heroSection/HagalRuneCircle/HagalRuneCircle.astro";
+import PedroYanez from "@assets/img/pedro-yanez.jpg";
 ---
 
 <div class=`coin-container`>
   <div class="relative flex justify-center items-center w-52 h-52 coin">
     <HagalRuneCircle />
 
-    <img
+    <!-- TODO: Colocar el alt y el id en constantes. -->
+    <Image
       id="pedro-yanez-photo"
-      src="/pedro-yanez.jpg"
+      src={PedroYanez}
       alt="Pedro Yanez"
       class="rounded-full grow-0 shrink-0 flex justify-center coin-face back"
     />
