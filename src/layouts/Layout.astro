@@ -2,7 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/jost";
 
-import SwitchTheme from "@/modules/theme/SwitchTheme/SwitchTheme.astro";
+import ThemeToggle from "@/modules/theme/ThemeToggle/ThemeToggle.astro";
 import Seo from "@/modules/seo/Seo.astro";
 
 interface Props {
@@ -24,7 +24,7 @@ const { title } = Astro.props;
     <Seo title={title} />
     <ViewTransitions />
   </head>
-  <body class="bg-background text-slate-200">
+  <body class="bg-secondary text-slate-200">
     <!--
      `    ``               `
       ``  _ `      `       ``
@@ -45,11 +45,23 @@ const { title } = Astro.props;
       <slot />
     </div>
 
-    <SwitchTheme />
+    <ThemeToggle />
   </body>
 </html>
 <style is:global>
+  :root {
+    --color-primary: 5, 20, 35; /*#000A23*/
+    --color-secondary: 255, 250, 247; /*FFFAF7*/
+    --background-color: --color-primary;
+  }
+
+  .dark {
+    --color-primary: 255, 250, 247;
+    --color-secondary: 5, 20, 35;
+  }
+
   html {
     font-family: "Jost Variable", system-ui, sans-serif;
+    color: rgb(255, 36, 65);
   }
 </style>
