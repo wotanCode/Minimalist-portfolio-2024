@@ -2,12 +2,7 @@
 import ThemeIcon from "@/assets/icons/theme.astro";
 ---
 
-<!--
-  <div class="absolute bottom-16 right-16 cursor-pointer">
-  <SunSwitchTheme class="text-white w-12 h-12" />
-
-</div>
-  --><!-- --><!--TODO: CAmbiar este ID -->
+<!--TODO: CAmbiar este ID -->
 <button
   id="themeToggle"
   class="absolute bottom-16 right-16 hover:scale-125 hover:opacity-70 transition inline-block size-12 text-primary/80"
@@ -19,27 +14,30 @@ import ThemeIcon from "@/assets/icons/theme.astro";
 
 <script is:inline>
   const getThemePreference = () => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    return (
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light")
+    );
   };
-  const isDark = getThemePreference() === "dark";
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  const applyTheme = (theme) => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  };
 
   const handleToggleClick = () => {
-    const element = document.documentElement;
-    element.classList.toggle("dark");
-
-    const isDark = element.classList.contains("dark");
+    const isDark = document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  console.log("is dark?", isDark);
+  const initializeTheme = () => {
+    const theme = getThemePreference();
+    applyTheme(theme);
+  };
 
   document
     .getElementById("themeToggle")
     .addEventListener("click", handleToggleClick);
+  initializeTheme();
 </script>
