@@ -32,8 +32,6 @@ import ThemeIcon from "@/assets/icons/theme.astro";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  console.log("is dark?", isDark);
-
   document
     .getElementById("themeToggle")
     .addEventListener("click", handleToggleClick);
