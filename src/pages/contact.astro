@@ -2,10 +2,65 @@
 import Layout from "@/layouts/Layout.astro";
 
 import { PEDROYANEZ } from "@/const/const";
+import GithubMark from "@/assets/icons/github-mark.astro";
+import Youtube from "@/assets/icons/youtube.astro";
+import Linkedin from "@/assets/icons/linkedin.astro";
 
 const title = `${PEDROYANEZ} - Contacto`; //TODO: aplicar internalización
 ---
 
 <Layout title={title}>
-  <h1>contacto</h1>
+  <div class="flex justify-between text-primary leading-relaxed">
+    <div class="max-w-2xl text-xl">
+      <h3 class="text-2xl mb-4">¡Será un placer conocer tus ideas!</h3>
+
+      <article>
+        Si te apasiona la tecnología tanto como a mí, no dudes en explorar mis
+        redes sociales para conocer más sobre mis proyectos. Ya sea que estés
+        buscando colaborar en un nuevo desarrollo, necesites asesoramiento
+        profesional, o simplemente quieras intercambiar ideas, estaré encantado
+        de conversar contigo. Siempre estoy abierto a nuevas oportunidades y
+        desafíos que me permitan seguir creciendo y aportando valor. ¡Hablemos y
+        creemos algo increíble juntos!
+      </article>
+    </div>
+    <aside class="flex flex-col w-1/4 border-2 p-4">
+      <h3 class="text-2xl mb-4 mx-auto">Redes sociales</h3>
+
+      <ul class="text-lg flex flex-col gap-4">
+        <li>
+          <a
+            href="https://github.com/pedroelhumano"
+            class="flex items-center transform hover:scale-105"
+            target="_blank"
+            rel="noopener"
+          >
+            <GithubMark class="w-10 h-9" /><span>/pedroelhumano</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.youtube.com/channel/UCwISu2hFg7EpOIZ8aV7iS6g?sub_confirmation=1"
+            class="flex items-center transform hover:scale-105"
+            target="_blank"
+            rel="noopener"
+          >
+            <Youtube class="w-10 h-10" /><span>/pedrothehuman</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.linkedin.com/in/pedroelhumano/"
+            class="flex items-center transform hover:scale-105"
+            target="_blank"
+            rel="noopener"
+          >
+            <Linkedin class="w-10 h-10" /><span>/in/pedroelhumano</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </div>
 </Layout>
