@@ -3,9 +3,21 @@ import Layout from "@/layouts/Layout.astro";
 
 import { PEDROYANEZ } from "@/const/const";
 
-const title = `${PEDROYANEZ} - Proyectos`; //TODO: aplicar internalización
+const title = `${PEDROYANEZ} - Contacto`; //TODO: aplicar internalización
 ---
 
 <Layout title={title}>
-  <h1>proyectos</h1>
+  <div class="flex justify-between text-primary leading-relaxed">
+    <div class="max-w-2xl text-xl">
+      <h3 class="text-2xl mb-4">Proyects</h3>
+
+      <p>asdasda aqui van los proyectos deben construirse con un fetch</p>
+    </div>
+
+    <aside class="flex flex-col w-1/4 border-2 p-4">
+      <h3 class="text-2xl mb-4 mx-auto">Github data</h3>
+
+      <p>Aqui van datos de github, deben construirse con un fetch igual</p>
+    </aside>
+  </div>
 </Layout>
