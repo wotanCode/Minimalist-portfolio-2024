@@ -2,6 +2,8 @@
 import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/jost";
 
+import Hero from "@/modules/heroSection/Hero/Hero.astro";
+import Menu from "@/modules/navbar/Menu/Menu.astro";
 import ThemeToggle from "@/modules/theme/ThemeToggle/ThemeToggle.astro";
 import Seo from "@/modules/seo/Seo.astro";
 
@@ -24,7 +26,7 @@ const { title } = Astro.props;
     <Seo title={title} />
     <ViewTransitions />
   </head>
-  <body class="bg-secondary text-slate-200">
+  <body>
     <!--
      `    ``               `
       ``  _ `      `       ``
@@ -41,17 +43,52 @@ const { title } = Astro.props;
   || ||   \Ɔ || \Ɔ   ||   ``    ``
   || ||      ||      ||  `     ``
     -->
-    <div class="max-w-6xl mx-auto mt-40">
-      <slot />
-    </div>
+    <div class="bg-secondary flex">
+      <section class="flex flex-col border-r-2 min-h-screen justify-between">
+        <div class="flex flex-col w-48 ml-8 mt-8 pr-2 mr-4">
+          <div class="flex flex-col mb-10">
+            <h1
+              class="flex flex-col text-5xl text-primary italic transform -rotate-3"
+            >
+              <span>
+                <span class="text-2xl">&lt;</span>
+                Pedro
+              </span>
 
-    <ThemeToggle />
+              <span class="mt-[-0.3em]">
+                Yanez
+                <span class="text-2xl">/&gt; </span>
+              </span>
+            </h1>
+
+            <!-- TODO: INternalizacion -->
+            <h2
+              class="mx-auto mt-[-0.6em] text-primary italic transform -rotate-3"
+            >
+              Developer
+            </h2>
+          </div>
+          <!-- <Hero /> -->
+          <Menu />
+        </div>
+        <!-- TODO: Internalizacion -->
+        <h6 class="text-primary/80 text-xs mb-2 ml-2">
+          <strong>Made with ❤️ by Pedro Yanez</strong>
+        </h6>
+      </section>
+
+      <main>
+        <!-- <slot /> -->
+      </main>
+
+      <ThemeToggle />
+    </div>
   </body>
 </html>
 <style is:global>
   :root {
-    --color-primary: 5, 20, 35; /*#000A23*/
-    --color-secondary: 255, 250, 247; /*FFFAF7*/
+    --color-primary: 5, 20, 35;
+    --color-secondary: 255, 250, 247;
     --background-color: --color-primary;
   }
 

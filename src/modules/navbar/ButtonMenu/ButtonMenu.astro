@@ -9,21 +9,16 @@ const currentPath = Astro.url.pathname;
 ---
 
 <li
-  class={"w-full h-full flex relative m-auto p-8 cursor-pointer transition-all hover:scale-105"}
+  class={"flex cursor-pointer bg-primary/90 p-2 skew-x-6 transition-all hover:scale-105 hover:bg-primary/95"}
 >
-  <a href={linkTo}>
-    <div
-      class="absolute bg-primary/90 w-full h-full skew-x-12 transition-all hover:bg-primary/95"
-    >
-    </div>
-    <span class={"ml-6 mt-4 absolute text-2xl text-secondary"}
+  <a class="w-full" href={linkTo}>
+    <span class={"text-base text-secondary"}
       >{text}
-
       {
         currentPath === linkTo && (
           <span
             transition:name="menu-line"
-            class="block border-b-2 px-16 border-secondary/40"
+            class="block border-b-2 border-secondary/40"
           />
         )
       }
