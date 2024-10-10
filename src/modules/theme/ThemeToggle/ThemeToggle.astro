@@ -1,15 +1,20 @@
 ---
-import ThemeIcon from "@/assets/icons/theme.astro";
+import SunIcon from "@assets/icons/sun.astro";
+import MoonIcon from "@assets/icons/moon.astro";
 ---
 
-<!--TODO: CAmbiar este ID -->
 <button
   id="themeToggle"
-  class="absolute bottom-16 right-16 hover:scale-125 hover:opacity-70 transition inline-block size-12 text-primary/80"
+  class="absolute bottom-16 right-16 inline-flex text-primary/80 transition hover:scale-125 hover:opacity-70"
 >
-  <ThemeIcon />
+  <SunIcon
+    class="opacity-100 transition-transform dark:-rotate-90 dark:opacity-0"
+  />
+  <MoonIcon
+    class="absolute rotate-90 opacity-0 transition-transform dark:rotate-0 dark:opacity-100"
+  />
   <!-- TODO: Esto es para los screenreaders, aquí debemos mover esto a una internalizacionación -->
-  <span class="sr-only">Toggle theme</span>
+  <span class="sr-only">Alternar tema</span>
 </button>
 
 <script is:inline>
