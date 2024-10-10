@@ -1,8 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Hero from "@/modules/heroSection/Hero/Hero.astro";
-import Menu from "@/modules/navbar/Menu/Menu.astro";
 import Description from "@/modules/aboutMe/description/Description.astro";
+import Hero from "@/modules/heroSection/Hero/Hero.astro";
 
 import { PEDROYANEZ } from "@/const/const";
 
@@ -10,5 +9,8 @@ const title = `${PEDROYANEZ}`;
 ---
 
 <Layout title={title}>
-  <Description />
+  <div class="flex flex-col gap-6">
+    <Hero />
+    <Description />
+  </div>
 </Layout>
