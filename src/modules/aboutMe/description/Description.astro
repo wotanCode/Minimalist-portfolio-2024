@@ -28,11 +28,11 @@ export const prerender = false;
     const experienceTI = (differenceInSecondsTI / secondsPerYear).toFixed();
 
     const differenceInSecondsDev = now - startProg;
-    const experienceProg = (differenceInSecondsDev / secondsPerYear).toFixed();
+    const experienceDev = (differenceInSecondsDev / secondsPerYear).toFixed();
 
     (document.getElementById("experienceTi") as HTMLElement).textContent =
       experienceTI;
-    (document.getElementById("experienceProg") as HTMLElement).textContent =
-      experienceProg;
+    (document.getElementById("experienceDev") as HTMLElement).textContent =
+      experienceDev;
   });
 </script>
