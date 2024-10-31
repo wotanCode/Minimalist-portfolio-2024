@@ -2,13 +2,17 @@
 //TODO: Usar el componente de imagen de astro
 // import { Image } from "astro:assets";
 
-import HagalRuneCircle from "@assets/icons/HagalRuneCircle.astro";
+import HagalRune from "@/assets/icons/HagalRune.astro";
 import PedroYanez from "@assets/img/pedro-yanez.jpg";
 ---
 
 <div class=`coin-container`>
   <div class="relative flex justify-center items-center w-52 h-52 coin">
-    <HagalRuneCircle />
+    <div
+      class=`absolute flex rounded-full grow-0 shrink-0 w-52 h-52 bg-primary/90 coin-face`
+    >
+      <HagalRune class="m-auto text-secondary w-44 h-44" />
+    </div>
 
     <img
       id="pedro-yanez-photo"
