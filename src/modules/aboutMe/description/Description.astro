@@ -5,27 +5,34 @@ export const prerender = false;
 <article>
   <!-- TODO: Internacionalización -->
   <!-- TODO: id en las contantes -->
-  <p class="text-2xl text-primary/90">
+  <p class="text-xl text-primary/90">
     ¡Hola! Soy un desarrollador con aproximadamente
-    <span id="experience"></span>
-    años de experiencia en la industria TI. Me apasiona programar, resolver problemas
-    y aprender nuevas tecnologías para seguir creciendo profesionalmente. Además
-    de mis habilidades técnicas, disfruto de practicar artes marciales, tocar la
-    guitarra, jugar ajedrez, entre otras actividades. ¡Te invito a conocer más sobre
-    mí! Gracias por pasarte.
+    <span id="experienceTi"></span>
+    años de experiencia en la industria TI y unos <span id="experienceDev"
+    ></span> años como desarrollador. Me apasiona programar, resolver problemas y
+    aprender nuevas tecnologías para seguir creciendo profesionalmente. Además de
+    mis habilidades técnicas, disfruto de practicar artes marciales, tocar la guitarra,
+    jugar ajedrez, entre otras actividades. ¡Te invito a conocer más sobre mí! Gracias
+    por pasarte.
   </p>
 </article>
 
 <script>
   document.addEventListener("astro:page-load", () => {
     const startTI = 1528243200;
-    const now = Math.floor(Date.now() / 1000);
-    const differenceInSeconds = now - startTI;
+    const startProg = 1622505600;
     const secondsPerYear = 31557600;
-    const timeToStart = (differenceInSeconds / secondsPerYear).toFixed();
-    const experienceElement = document.getElementById(
-      "experience"
-    ) as HTMLElement;
-    experienceElement.textContent = timeToStart;
+    const now = Math.floor(Date.now() / 1000);
+
+    const differenceInSecondsTI = now - startTI;
+    const experienceTI = (differenceInSecondsTI / secondsPerYear).toFixed();
+
+    const differenceInSecondsDev = now - startProg;
+    const experienceProg = (differenceInSecondsDev / secondsPerYear).toFixed();
+
+    (document.getElementById("experienceTi") as HTMLElement).textContent =
+      experienceTI;
+    (document.getElementById("experienceProg") as HTMLElement).textContent =
+      experienceProg;
   });
 </script>
