@@ -1,6 +1,6 @@
 interface menuListI {
   order: number;
-  title: string;
+  title: string; //internalizar esto
   link: string;
   // TODO ICON
   // TODO: ID
@@ -13,18 +13,21 @@ export const menuList: menuListI[] = [
     order: 1,
     title: 'Sobre mi',
     link: '/',
+    // id: constants.id
     // icon: 'user',
   },
   {
     order: 2,
     title: 'Proyectos',
     link: '/projects',
+    // id: constants.id
     // icon: 'code',
   },
   {
     order: 3,
     title: 'Contacto',
     link: '/contact',
+    // id: constants.id
     // icon: 'mail',
   }
 ]
