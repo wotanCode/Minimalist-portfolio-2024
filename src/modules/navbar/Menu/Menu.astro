@@ -1,11 +1,16 @@
 ---
 import ButtonMenu from "@/modules/navbar/ButtonMenu/ButtonMenu.astro";
+import { menuList } from "@/consts/menuList";
 ---
 
 <nav>
   <ul class="flex flex-col justify-between gap-4">
-    <ButtonMenu linkTo="/" text="Sobre mi" />
-    <ButtonMenu linkTo="/projects" text="Proyectos" />
-    <ButtonMenu linkTo="/contact" text="Contacto" />
+    {
+      menuList
+        .sort((a, b) => a.order - b.order)
+        .map((menuList) => (
+          <ButtonMenu linkTo={menuList.link} text={menuList.title} />
+        ))
+    }
   </ul>
 </nav>
