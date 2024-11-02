@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/jost";
 
+import Logo from "@/modules/navbar/Logo/Logo.astro";
 import Menu from "@/modules/navbar/Menu/Menu.astro";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
 import Seo from "@/components/Seo/Seo.astro";
@@ -46,28 +47,9 @@ const { title } = Astro.props;
       <section class="flex flex-col border-r-2 min-h-screen justify-between">
         <div class="flex flex-col w-48 ml-8 mt-8 pr-2 mr-4">
           <div class="flex flex-col mb-10">
-            <h1
-              class="flex flex-col text-5xl text-primary italic transform -rotate-3"
-            >
-              <span>
-                <span aria-hidden class="text-2xl">&lt;</span>
-                Pedro
-              </span>
-
-              <span class="mt-[-0.3em]">
-                Yanez
-                <span aria-hidden class="text-2xl">/&gt;</span>
-              </span>
-            </h1>
-
-            <!-- TODO: INternalizacion -->
-            <h2
-              class="mx-auto mt-[-0.6em] text-primary italic transform -rotate-3"
-            >
-              Developer
-            </h2>
+            <Logo />
           </div>
-          <!-- <Hero /> -->
+
           <Menu />
         </div>
       </section>
