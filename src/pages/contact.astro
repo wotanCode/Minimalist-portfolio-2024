@@ -1,82 +1,87 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import { PEDROYANEZ } from "@/consts/const";
 import GithubMark from "@/assets/icons/github-mark.astro";
 import Youtube from "@/assets/icons/youtube.astro";
 import Linkedin from "@/assets/icons/linkedin.astro";
-import InfoBox from "@/components/InfoBox/InfoBox.astro";
+
+import SectionLayout from "@/UI/SectionLayout.astro";
+import TwoColumnLayout from "@/UI/TwoColumnLayout.astro";
+import PrimaryContain from "@/UI/PrimaryContain.astro";
+import InfoBox from "@/UI/InfoBox.astro";
+
+import { PEDROYANEZ } from "@/consts/const";
 
 const title = `${PEDROYANEZ} - Contacto`; //TODO: aplicar internalización
 ---
 
 <Layout title={title}>
-  <div class="flex justify-between text-primary">
-    <div class="max-w-2xl">
-      <h3 class="text-2xl mb-4">¡Será un placer conocer tus ideas!</h3>
+  <SectionLayout sectionTitle="¡Será un placer conocer tus ideas!">
+    <TwoColumnLayout>
+      <PrimaryContain>
+        <article class="text-xl">
+          <p class="leading-normal">
+            Si te apasiona la tecnología tanto como a mí, no dudes en explorar
+            mis redes sociales para conocer más sobre mis proyectos. Ya sea que
+            estés buscando colaborar en un nuevo desarrollo, necesites
+            asesoramiento profesional, o simplemente quieras intercambiar ideas,
+            estaré encantado de conversar contigo. Siempre estoy abierto a
+            nuevas oportunidades y desafíos que me permitan seguir creciendo y
+            aportando valor. ¡Hablemos y creemos algo increíble juntos!
+          </p>
+        </article>
+      </PrimaryContain>
 
-      <article class="text-xl">
-        <p class="leading-normal">
-          Si te apasiona la tecnología tanto como a mí, no dudes en explorar mis
-          redes sociales para conocer más sobre mis proyectos. Ya sea que estés
-          buscando colaborar en un nuevo desarrollo, necesites asesoramiento
-          profesional, o simplemente quieras intercambiar ideas, estaré
-          encantado de conversar contigo. Siempre estoy abierto a nuevas
-          oportunidades y desafíos que me permitan seguir creciendo y aportando
-          valor. ¡Hablemos y creemos algo increíble juntos!
-        </p>
-      </article>
-    </div>
+      <InfoBox>
+        <h3 class="text-2xl mb-4 mx-auto">Redes sociales</h3>
 
-    <InfoBox>
-      <h3 class="text-2xl mb-4 mx-auto">Redes sociales</h3>
+        <ul class="text-lg flex flex-col gap-4">
+          <li>
+            <a
+              href="https://github.com/pedroelhumano"
+              class="flex items-center transition-all hover:scale-105"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <GithubMark class="w-10 h-9" />
+              </div>
 
-      <ul class="text-lg flex flex-col gap-4">
-        <li>
-          <a
-            href="https://github.com/pedroelhumano"
-            class="flex items-center transition-all hover:scale-105"
-            target="_blank"
-            rel="noopener"
-          >
-            <div>
-              <GithubMark class="w-10 h-9" />
-            </div>
+              <span>/pedroelhumano</span>
+            </a>
+          </li>
 
-            <span>/pedroelhumano</span>
-          </a>
-        </li>
+          <li>
+            <a
+              href="https://www.youtube.com/channel/UCwISu2hFg7EpOIZ8aV7iS6g?sub_confirmation=1"
+              class="flex items-center transition-all hover:scale-105"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <Youtube class="w-10 h-10" />
+              </div>
 
-        <li>
-          <a
-            href="https://www.youtube.com/channel/UCwISu2hFg7EpOIZ8aV7iS6g?sub_confirmation=1"
-            class="flex items-center transition-all hover:scale-105"
-            target="_blank"
-            rel="noopener"
-          >
-            <div>
-              <Youtube class="w-10 h-10" />
-            </div>
+              <span>/pedrothehuman</span>
+            </a>
+          </li>
 
-            <span>/pedrothehuman</span>
-          </a>
-        </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/pedro-yanez/"
+              class="flex items-center transition-all hover:scale-105"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <Linkedin class="w-10 h-10" />
+              </div>
 
-        <li>
-          <a
-            href="https://www.linkedin.com/in/pedro-yanez/"
-            class="flex items-center transition-all hover:scale-105"
-            target="_blank"
-            rel="noopener"
-          >
-            <div>
-              <Linkedin class="w-10 h-10" />
-            </div>
-
-            <span>/in/pedro-yanez</span>
-          </a>
-        </li>
-      </ul>
-    </InfoBox>
-  </div>
+              <span>/in/pedro-yanez</span>
+            </a>
+          </li>
+        </ul>
+      </InfoBox>
+    </TwoColumnLayout>
+  </SectionLayout>
 </Layout>

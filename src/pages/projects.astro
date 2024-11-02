@@ -1,24 +1,28 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import { PEDROYANEZ } from "@/consts/const";
-import InfoBox from "@/components/InfoBox/InfoBox.astro";
+import SectionLayout from "@/UI/SectionLayout.astro";
+import TwoColumnLayout from "@/UI/TwoColumnLayout.astro";
+import PrimaryContain from "@/UI/PrimaryContain.astro";
+import InfoBox from "@/UI/InfoBox.astro";
 
-const title = `${PEDROYANEZ} - Contacto`; //TODO: aplicar internalización
+import { PEDROYANEZ } from "@/consts/const";
+
+const title = `${PEDROYANEZ} - Proyectos`; //TODO: aplicar internalización
 ---
 
 <Layout title={title}>
-  <div class="flex justify-between text-primary">
-    <div class="max-w-2xl text-xl">
-      <h3 class="text-2xl mb-4">Proyects</h3>
+  <SectionLayout sectionTitle="Proyectos">
+    <TwoColumnLayout>
+      <PrimaryContain>
+        <p>asdasda aqui van los</p>
+      </PrimaryContain>
 
-      <p>asdasda aqui van los proyectos deben construirse con un fetch</p>
-    </div>
+      <InfoBox>
+        <h3 class="text-2xl mb-4 mx-auto">Github data</h3>
 
-    <InfoBox>
-      <h3 class="text-2xl mb-4 mx-auto">Github data</h3>
-
-      <p>Aqui van datos de github, deben construirse con un fetch igual</p>
-    </InfoBox>
-  </div>
+        <p>Aqui van datos de github, deben construirse con un fetch igual</p>
+      </InfoBox>
+    </TwoColumnLayout>
+  </SectionLayout>
 </Layout>
