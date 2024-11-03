@@ -2,9 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/jost";
 
-import Logo from "@/modules/navbar/Logo/Logo.astro";
 import Menu from "@/modules/navbar/Menu/Menu.astro";
-import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
 import Seo from "@/components/Seo/Seo.astro";
 
 interface Props {
@@ -47,19 +45,19 @@ const { title } = Astro.props;
     <!-- TODO: cambiar md:min-w-32 por max -->
     <section
       class="flex
-      flex-col
-      border-b-2
-      justify-between
-      p-8
-      md:min-h-screen md:max-w-56 md:w-full
-      md:pt-4 md:pl-4 md:pr-4 md:pb-0
-      md:border-b-0 md:border-r-2"
+    flex-col
+    border-b-2
+    justify-between
+    p-8
+    md:min-h-screen md:h-screen md:max-w-56 md:w-full
+    md:pt-4 md:pl-4 md:pr-4 md:pb-0
+    md:border-b-0 md:border-r-2"
     >
       <Menu />
     </section>
 
     <main
-      class="flex flex-col max-w-5xl mt-10 md:mt-20 mx-auto w-full px-4 sm:px-6 lg:px-8"
+      class="flex flex-col max-w-screen-lg mt-10 md:mt-20 mx-auto w-full px-4 sm:px-6 lg:px-8"
     >
       <slot />
     </main>
@@ -76,8 +74,6 @@ const { title } = Astro.props;
           Casi todos los derechos reservados...
         </h6>
       </div>
-
-      <ThemeToggle />
     </footer>
   </body>
 </html>
