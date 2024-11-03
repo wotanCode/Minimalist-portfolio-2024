@@ -2,12 +2,16 @@
 import AnimateCircle from "@/modules/aboutMe/AnimateCircle/AnimateCircle.astro";
 ---
 
-<section class=`flex flex-col gap-6`>
-  <div class="flex gap-6">
+<div class=`flex flex-col gap-6`>
+  <div class="flex flex-col md:flex-row gap-4 md:gap-6">
     <AnimateCircle />
-    <div class="flex flex-col justify-center">
-      <h1 class="text-7xl capitalize text-primary/85">Pedro Yanez</h1>
-      <h2 class="text-4xl text-primary/85">Desarrollador de Software</h2>
+    <div class="flex flex-col justify-center text-center md:text-left">
+      <h1 class="text-4xl capitalize text-primary/85 md:text-7xl">
+        Pedro Yanez
+      </h1>
+      <h2 class="text-3xl text-primary/85 md:text-4xl">
+        Desarrollador de Software
+      </h2>
     </div>
   </div>
-</section>
+</div>
