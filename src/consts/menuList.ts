@@ -11,23 +11,23 @@ interface menuListI {
 export const menuList: menuListI[] = [
   {
     order: 1,
-    title: 'Sobre mi',
-    link: '/',
+    title: "Sobre mi",
+    link: "/",
     // id: constants.id
     // icon: 'user',
   },
   {
     order: 2,
-    title: 'Proyectos',
-    link: '/projects',
+    title: "Proyectos",
+    link: "/projects",
     // id: constants.id
     // icon: 'code',
   },
   {
     order: 3,
-    title: 'Contacto',
-    link: '/contact',
+    title: "Contacto",
+    link: "/contact",
     // id: constants.id
     // icon: 'mail',
-  }
-]
+  },
+];
