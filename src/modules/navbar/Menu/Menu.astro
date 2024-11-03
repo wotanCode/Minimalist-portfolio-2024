@@ -7,18 +7,16 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
 ---
 
 <nav
-  class="relative w-full flex flex-row justify-between
-    md:flex-col md:justify-normal md:gap-6 md:h-full"
+  class="relative flex w-full flex-row justify-between md:h-full md:flex-col md:justify-normal md:gap-6"
 >
   <Logo />
 
   <div
-    class="flex items-center gap-10
-          md:flex-col-reverse md:justify-between md:gap-0 md:h-full"
+    class="flex items-center gap-10 md:h-full md:flex-col-reverse md:justify-between md:gap-0"
   >
     <ThemeToggle />
 
-    <div class="flex w-full flex-wrap relative items-center">
+    <div class="relative flex w-full flex-wrap items-center">
       <!-- TODO: modificar ID a constante, lo ismo para los aria-controls -->
       <button
         data-collapse-toggle="navbar-default"
@@ -26,12 +24,7 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
         aria-controls="navbar-default"
         aria-expanded="false"
         id="menu-toggle"
-        class="p-2 w-14 h-14 rounded-lg
-      text-primary/70
-      hover:bg-primary/5
-      focus:outline-none focus:ring-2 focus:ring-primary/20
-      dark:text-primary/70 dark:hover:bg-primary/25 dark:focus:ring-primary/70
-      md:hidden md:rounded-none"
+        class="h-14 w-14 rounded-lg p-2 text-primary/70 hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary/20 dark:text-primary/70 dark:hover:bg-primary/25 dark:focus:ring-primary/70 md:hidden md:rounded-none"
       >
         <!-- TODO: internalizacion -->
         <span class="sr-only">Open main menu</span>
@@ -40,13 +33,11 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
 
       <!-- TODO: ID -->
       <div
-        class="hidden absolute top-1/4 right-16 z-50
-        md:static md:top-0 md:right-0 md:block md:w-full"
+        class="absolute right-16 top-1/4 z-50 hidden md:static md:right-0 md:top-0 md:block md:w-full"
         id="navbar-default"
       >
         <ul
-          class="flex flex-col justify-between p-4 gap-1 shadow-lg rounded-lg w-64 bg-primary/20
-            md:p-0 md:bg-inherit md:rounded-none md:shadow-none md:gap-2 md:w-full"
+          class="flex w-64 flex-col justify-between gap-1 rounded-lg bg-primary/20 p-4 shadow-lg md:w-full md:gap-2 md:rounded-none md:bg-inherit md:p-0 md:shadow-none"
         >
           {
             menuList
@@ -64,7 +55,7 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
 
   <!-- TODO: Internalizacion -->
   <footer class="hidden md:mb-4 md:block">
-    <h6 class="text-primary/80 text-xs">
+    <h6 class="text-xs text-primary/80">
       <!--TODO: internacionalización -->
       <strong>
         Made with <span class="sr-only">Amor</span>
@@ -72,7 +63,7 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
       </strong>
     </h6>
 
-    <h6 class="text-primary/80 text-xs">
+    <h6 class="text-xs text-primary/80">
       ®Casi todos los derechos reservados...
     </h6>
   </footer>
