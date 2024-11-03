@@ -14,7 +14,7 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
 
   <div
     class="flex items-center gap-10
-          md:flex-col-reverse md:justify-between md:gap-0 md:h-full md:mb-8"
+          md:flex-col-reverse md:justify-between md:gap-0 md:h-full"
   >
     <ThemeToggle />
 
@@ -61,6 +61,18 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
       </div>
     </div>
   </div>
+
+  <!-- TODO: Internalizacion -->
+  <footer class="hidden md:mb-4 md:block">
+    <h6 class="text-primary/80 text-xs hidden md:block">
+      <!-- TODO: Agregar esto al corazon <span class="sr-only">Amor</span> -->
+      <strong>Made with ❤️ by Pedro Yanez</strong>
+    </h6>
+
+    <h6 class="text-primary/80 text-xs hidden md:block">
+      Casi todos los derechos reservados...
+    </h6>
+  </footer>
 </nav>
 
 <script>
