@@ -1,16 +1,79 @@
 ---
 import ButtonMenu from "@/modules/navbar/ButtonMenu/ButtonMenu.astro";
 import { menuList } from "@/consts/menuList";
+import Logo from "../Logo/Logo.astro";
+import HamburgerMenu from "@/assets/icons/hamburgerMenu.astro";
 ---
 
-<nav>
-  <ul class="flex flex-col justify-between gap-4">
-    {
-      menuList
-        .sort((a, b) => a.order - b.order)
-        .map((menuList) => (
-          <ButtonMenu linkTo={menuList.link} text={menuList.title} />
-        ))
-    }
-  </ul>
+<nav
+  class="w-full flex flex-row justify-between
+  md:flex-col md:justify-normal md:gap-6"
+>
+  <Logo />
+
+  <div class="flex flex-wrap relative items-center">
+    <!-- TODO: modificar ID a constante, lo ismo para los aria-controls -->
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+      id="menu-toggle"
+      class="p-2 w-14 h-14 rounded-lg
+      text-primary/70
+      hover:bg-primary/5
+      focus:outline-none focus:ring-2 focus:ring-primary/20
+      dark:text-primary/70 dark:hover:bg-primary/25 dark:focus:ring-primary/70
+      md:hidden md:rounded-none"
+    >
+      <!-- TODO: internalizacion -->
+      <span class="sr-only">Open main menu</span>
+      <HamburgerMenu />
+    </button>
+
+    <!-- TODO: ID -->
+    <div
+      class="hidden absolute top-1/4 right-16
+        md:static md:top-0 md:right-0 md:block md:w-full"
+      id="navbar-default"
+    >
+      <ul
+        class="flex flex-col justify-between p-4 gap-1 shadow-lg rounded-lg w-64
+            md:p-0 md:bg-inherit md:rounded-none md:shadow-none md:gap-2 md:w-full"
+      >
+        {
+          menuList
+            .sort((a, b) => a.order - b.order)
+            .map((item) => (
+              <li>
+                <ButtonMenu linkTo={item.link} text={item.title} />
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+  </div>
 </nav>
+
+<script>
+  const applyMenuToggle = () => {
+    const toggleButton = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar-default");
+
+    if (toggleButton && navbar) {
+      navbar.classList.add("hidden");
+
+      toggleButton.removeEventListener("click", handleToggle);
+      toggleButton.addEventListener("click", handleToggle);
+    }
+  };
+
+  const handleToggle = () => {
+    const navbar = document.getElementById("navbar-default");
+    navbar?.classList.toggle("hidden");
+  };
+
+  applyMenuToggle();
+
+  document.addEventListener("astro:after-swap", applyMenuToggle);
+</script>
