@@ -9,11 +9,14 @@ const currentPath = Astro.url.pathname;
 ---
 
 <li
-  class={"flex cursor-pointer bg-primary/90 p-2 skew-x-6 transition-all hover:scale-105 hover:bg-primary/95"}
+  class="text-base text-secondary text-center flex cursor-pointer md:text-left md:transition-all md:hover:scale-105"
 >
-  <a class="w-full" href={linkTo}>
-    <span class={"text-base text-secondary"}
-      >{text}
+  <a
+    class="w-full p-2 skew-x-6 bg-primary/90 hover:bg-primary/95"
+    href={linkTo}
+  >
+    <span class="">
+      {text}
       {
         currentPath === linkTo && (
           <span
