@@ -5,14 +5,14 @@ interface ButtonLink {
   link: string;
 }
 
-export interface Props {
+export interface projectCardProps {
   name: string;
   created_at: string;
-  description?: string;
-  language?: string;
-  topics?: string[];
   primaryBtn: ButtonLink;
-  secondaryBtn?: ButtonLink;
+  description: string;
+  language: string;
+  topics: string[];
+  extraButtons?: ButtonLink[];
 }
 
 const {
@@ -22,8 +22,8 @@ const {
   topics,
   primaryBtn,
   created_at,
-  secondaryBtn,
-} = Astro.props as Props;
+  extraButtons,
+} = Astro.props as projectCardProps;
 
 const formatTopics = (topicsList: string[]) => topicsList.join(", ");
 
@@ -69,7 +69,7 @@ const formattedDate = formatDate(created_at);
         topics && topics.length > 0 && (
           <div class="flex flex-row">
             <dt>Topics:&nbsp;</dt>
-            <dd>{topics}</dd>
+            <dd>{formatTopics(topics)}</dd>
           </div>
         )
       }
@@ -93,17 +93,18 @@ const formattedDate = formatDate(created_at);
     </a>
 
     {
-      secondaryBtn && (
-        <a
-          href={secondaryBtn.link}
-          class="rounded-md bg-primary/30 p-2 transition-all hover:scale-105 hover:bg-primary/50"
-          target="_blank"
-          rel="noopener"
-          type="button"
-        >
-          {secondaryBtn.text}
-        </a>
-      )
+      extraButtons &&
+        extraButtons.map((button) => (
+          <a
+            href={button.link}
+            class="rounded-md bg-primary/30 p-2 transition-all hover:scale-105 hover:bg-primary/50"
+            target="_blank"
+            rel="noopener"
+            type="button"
+          >
+            {button.text}
+          </a>
+        ))
     }
   </div>
 </div>
