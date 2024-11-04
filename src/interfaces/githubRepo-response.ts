@@ -136,15 +136,15 @@ export interface Owner {
 }
 
 export enum EventsURL {
-  HTTPSAPIGithubCOMUsersPedroelhumanoEventsPrivacy = "https://api.github.com/users/pedroelhumano/events{/privacy}",
+  HTTPSAPIGithubCOMUsersWotanCodeEventsPrivacy = "https://api.github.com/users/wotanCode/events{/privacy}",
 }
 
 export enum GistsURL {
-  HTTPSAPIGithubCOMUsersPedroelhumanoGistsGistID = "https://api.github.com/users/pedroelhumano/gists{/gist_id}",
+  HTTPSAPIGithubCOMUsersWotanCodeGistsGistID = "https://api.github.com/users/wotanCode/gists{/gist_id}",
 }
 
 export enum Login {
-  Pedroelhumano = "pedroelhumano",
+  WotanCode = "wotanCode",
 }
 
 export enum OwnerNodeID {
