@@ -6,11 +6,11 @@ import {
   ignoreCaseForExcluding,
   repositoriesToShow,
 } from "@/modules/projects/ProjectList/utils/reposToShow";
-import { reposData } from "@/api/githubFetch";
+import { githubReposData } from "@/api/githubFetch";
 
-const hasError = reposData.length === 0;
+const hasError = githubReposData.length === 0;
 
-const filteredRepos = reposData.filter((repo) =>
+const filteredRepos = githubReposData.filter((repo) =>
   repositoriesToShow.includes(repo.id),
 );
 

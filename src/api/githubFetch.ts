@@ -21,4 +21,4 @@ async function fetchRepos(): Promise<githubRepoResponse[]> {
     return [];
   }
 }
-export const reposData = await fetchRepos();
+export const githubReposData = await fetchRepos();
