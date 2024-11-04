@@ -2,15 +2,15 @@ import type { githubRepoResponse } from "@/interfaces/githubRepo-response";
 
 export function unifyRepos(
   repo1: { data: Partial<githubRepoResponse>; btnText: string },
-  repo2: { data: Partial<githubRepoResponse>; btnText: string }
+  repo2: { data: Partial<githubRepoResponse>; btnText: string },
 ) {
   return {
     name: `${repo1.data.name} + ${repo2.data.name}`,
     created_at: new Date(
       Math.min(
         new Date(repo1.data.created_at as Date).getTime(),
-        new Date(repo2.data.created_at as Date).getTime()
-      )
+        new Date(repo2.data.created_at as Date).getTime(),
+      ),
     ).toString(),
     primaryBtn: { text: repo1.btnText, link: repo1.data.html_url || "#" },
     extraButtons: [{ text: repo2.btnText, link: repo2.data.html_url || "#" }],
