@@ -1,0 +1,102 @@
+---
+import type { githubRepoResponse } from "@/interfaces/githubRepo-response";
+import type { projectCardProps } from "@/modules/projects/ProjectCard/ProjectCard.astro";
+import ProjectCard from "@/modules/projects/ProjectCard/ProjectCard.astro";
+import { unifyRepos } from "@/modules/projects/ProjectList/utils/unifyRepos";
+import {
+  ignoreCaseForExcluding,
+  repositoriesToShow,
+} from "@/modules/projects/ProjectList/utils/reposToShow";
+
+async function fetchRepos(): Promise<githubRepoResponse[]> {
+  const url = "https://api.github.com/users/wotanCode/repos";
+
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data: githubRepoResponse[] = await response.json();
+    return data;
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error("Error fetching repositories:", error.message);
+    } else {
+      console.error("Unknown error:", error);
+    }
+    return [];
+  }
+}
+const repos = await fetchRepos();
+const hasError = repos.length === 0;
+
+const filteredRepos = repos.filter((repo) =>
+  repositoriesToShow.includes(repo.id)
+);
+
+// Special case for 4geeksAcademy
+const backendRepo4GeeksProject = filteredRepos.find(
+  (repo) => repo.id === 398122061
+);
+const frontendRepo4GeeksProject = filteredRepos.find(
+  (repo) => repo.id === 395499242
+);
+let unified4GeeksRepo: projectCardProps | undefined;
+if (backendRepo4GeeksProject && frontendRepo4GeeksProject) {
+  unified4GeeksRepo = unifyRepos(
+    { data: backendRepo4GeeksProject, btnText: "Repositorio Backend" },
+    { data: frontendRepo4GeeksProject, btnText: "Repositorio Frontend" }
+  );
+}
+// End of Special case for 4geeksAcademy
+
+const finalRepoList: projectCardProps[] = filteredRepos
+  .filter((repo) => !ignoreCaseForExcluding.includes(repo.id))
+  .map((repo) => {
+    const extraButtons = repo.homepage
+      ? [{ text: "Website", link: repo.homepage }]
+      : [];
+
+    return {
+      name: repo.name,
+      created_at: new Date(repo.created_at).toString(),
+      primaryBtn: { text: "Ver Repositorio", link: repo.html_url || "#" },
+      extraButtons,
+      description: repo.description?.trim() || "",
+      language: repo.language || "",
+      topics: repo.topics || [],
+    };
+  });
+
+if (unified4GeeksRepo) finalRepoList.push(unified4GeeksRepo);
+
+finalRepoList.sort(
+  (a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+);
+---
+
+{
+  hasError ? (
+    <p>Error al cargar los repositorios. Por favor, inténtalo más tarde.</p>
+  ) : finalRepoList.length > 0 ? (
+    <ul class="flex flex-col-reverse gap-8">
+      {finalRepoList.map((repo) => (
+        <li>
+          <ProjectCard
+            name={repo.name}
+            created_at={repo.created_at}
+            primaryBtn={repo.primaryBtn}
+            description={repo.description}
+            language={repo.language}
+            topics={repo.topics}
+            extraButtons={repo.extraButtons}
+          />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>No se encontraron repositorios.</p>
+  )
+}

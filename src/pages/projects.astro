@@ -7,6 +7,7 @@ import PrimaryContain from "@/UI/PrimaryContain.astro";
 import InfoBox from "@/UI/InfoBox.astro";
 
 import { PEDROYANEZ } from "@/consts/const";
+import ProjectList from "@/modules/projects/ProjectList/ProjectList.astro";
 
 const title = `${PEDROYANEZ} - Proyectos`; //TODO: aplicar internalización
 ---
@@ -15,7 +16,7 @@ const title = `${PEDROYANEZ} - Proyectos`; //TODO: aplicar internalización
   <SectionLayout sectionTitle="Proyectos">
     <TwoColumnLayout>
       <PrimaryContain>
-        <p>asdasda aqui van los</p>
+        <ProjectList />
       </PrimaryContain>
 
       <InfoBox boxTitle="Github data">
