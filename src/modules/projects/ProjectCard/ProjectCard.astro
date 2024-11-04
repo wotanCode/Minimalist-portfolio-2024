@@ -1,0 +1,109 @@
+---
+interface ButtonLink {
+  icon?: string;
+  text: string;
+  link: string;
+}
+
+export interface Props {
+  name: string;
+  created_at: string;
+  description?: string;
+  language?: string;
+  topics?: string[];
+  primaryBtn: ButtonLink;
+  secondaryBtn?: ButtonLink;
+}
+
+const {
+  name,
+  description,
+  language,
+  topics,
+  primaryBtn,
+  created_at,
+  secondaryBtn,
+} = Astro.props as Props;
+
+const formatTopics = (topicsList: string[]) => topicsList.join(", ");
+
+if (topics) formatTopics(topics);
+
+const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  return `${month}/${year}`;
+};
+const formattedDate = formatDate(created_at);
+---
+
+<div
+  class="flex flex-col gap-1 rounded-lg border-2 border-primary/25 bg-primary/20 p-4 text-primary/90"
+>
+  <div class="flex flex-col gap-1">
+    <h4>
+      <strong>{name}</strong>
+    </h4>
+
+    <dl class="flex flex-col">
+      {
+        description && (
+          <div class="flex flex-row">
+            <dt>Description:&nbsp;</dt>
+            <dd>{description}</dd>
+          </div>
+        )
+      }
+
+      {
+        language && (
+          <div class="flex flex-row">
+            <dt>Language:&nbsp;</dt>
+            <dd>{language}</dd>
+          </div>
+        )
+      }
+
+      {
+        topics && topics.length > 0 && (
+          <div class="flex flex-row">
+            <dt>Topics:&nbsp;</dt>
+            <dd>{topics}</dd>
+          </div>
+        )
+      }
+
+      <div class="flex flex-row">
+        <dt>Created At:&nbsp;</dt>
+        <dd>{formattedDate}</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="flex flex-row gap-4">
+    <a
+      href={primaryBtn.link}
+      class="rounded-md bg-primary/30 p-2 transition-all hover:scale-105 hover:bg-primary/50"
+      target="_blank"
+      rel="noopener"
+      type="button"
+    >
+      {primaryBtn.text}
+    </a>
+
+    {
+      secondaryBtn && (
+        <a
+          href={secondaryBtn.link}
+          class="rounded-md bg-primary/30 p-2 transition-all hover:scale-105 hover:bg-primary/50"
+          target="_blank"
+          rel="noopener"
+          type="button"
+        >
+          {secondaryBtn.text}
+        </a>
+      )
+    }
+  </div>
+</div>
