@@ -44,8 +44,6 @@ import { IDS } from "@/consts/const";
     const isDark = savedTheme === "dark";
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-    console.log("clickss!");
-
     // NOTE: theme-toggle string is from IDS.navbar.themeToggle
     const themeToggle = document.getElementById("theme-toggle");
     if (themeToggle) {
