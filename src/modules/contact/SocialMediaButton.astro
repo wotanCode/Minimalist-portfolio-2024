@@ -1,0 +1,22 @@
+---
+export interface SocialMediaButtonProps {
+  id: string;
+  text: string;
+  link: string;
+}
+
+const { id, text, link } = Astro.props as SocialMediaButtonProps;
+---
+
+<a
+  href={link}
+  class="flex items-center transition-all hover:scale-105"
+  target="_blank"
+  rel="noopener"
+  id={id}
+>
+  <div>
+    <slot />
+  </div>
+  <span>{text}</span>
+</a>
