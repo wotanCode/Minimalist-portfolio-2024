@@ -1,6 +1,7 @@
 ---
 import ButtonCard from "../ButtonCard/ButtonCard.astro";
 
+// TODO: Add icons
 interface ButtonLink {
   // icon?: string;
   id?: string;
@@ -84,7 +85,6 @@ const formattedDate = formatDate(created_at);
     </dl>
   </div>
 
-  <!-- TODO: PAsar estos botones a un componente -->
   <div class="flex flex-row gap-4">
     <ButtonCard
       link={primaryBtn.link}
