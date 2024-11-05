@@ -1,5 +1,5 @@
 ---
-import { IDS } from "@/consts/const";
+import ButtonCard from "../ButtonCard/ButtonCard.astro";
 
 interface ButtonLink {
   // icon?: string;
@@ -86,30 +86,15 @@ const formattedDate = formatDate(created_at);
 
   <!-- TODO: PAsar estos botones a un componente -->
   <div class="flex flex-row gap-4">
-    <a
-      href={primaryBtn.link}
-      class="rounded-md bg-primary/30 p-2 transition-all hover:scale-105 hover:bg-primary/50"
-      target="_blank"
-      rel="noopener"
-      type="button"
-      id={`${primaryBtn.id}`}
-    >
-      {primaryBtn.text}
-    </a>
-
+    <ButtonCard
+      link={primaryBtn.link}
+      text={primaryBtn.text}
+      id={primaryBtn.id}
+    />
     {
       extraButtons &&
         extraButtons.map((button) => (
-          <a
-            href={button.link}
-            class="rounded-md bg-primary/30 p-2 transition-all hover:scale-105 hover:bg-primary/50"
-            target="_blank"
-            rel="noopener"
-            type="button"
-            id={button.id}
-          >
-            {button.text}
-          </a>
+          <ButtonCard link={button.link} text={button.text} id={button.id} />
         ))
     }
   </div>
