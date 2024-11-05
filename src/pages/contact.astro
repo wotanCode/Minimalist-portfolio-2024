@@ -10,9 +10,9 @@ import TwoColumnLayout from "@/UI/TwoColumnLayout.astro";
 import PrimaryContain from "@/UI/PrimaryContain.astro";
 import InfoBox from "@/UI/InfoBox.astro";
 
-import { PEDROYANEZ } from "@/consts/const";
+import { IDS, PEDROYANEZNAME, SOCIALMEDIA } from "@/consts/const";
 
-const title = `${PEDROYANEZ} - Contacto`; //TODO: aplicar internalización
+const title = `${PEDROYANEZNAME} - Contacto`; //TODO: aplicar internalización
 ---
 
 <Layout title={title}>
@@ -34,48 +34,52 @@ const title = `${PEDROYANEZ} - Contacto`; //TODO: aplicar internalización
 
       <InfoBox boxTitle="Redes sociales">
         <ul class="flex flex-col gap-4 text-lg">
+          <!--TODO: llevar estos links a un componente -->
           <li>
             <a
-              href="https://github.com/pedroelhumano"
+              href=`https://github.com/${SOCIALMEDIA.githubUser}`
               class="flex items-center transition-all hover:scale-105"
               target="_blank"
               rel="noopener"
+              id=`${IDS.contact.socialMediaAnchor.github}`
             >
               <div>
                 <GithubMark class="h-9 w-10" />
               </div>
 
-              <span>/pedroelhumano</span>
+              <span>{`${SOCIALMEDIA.githubUser}`}</span>
             </a>
           </li>
 
           <li>
             <a
-              href="https://www.youtube.com/channel/UCwISu2hFg7EpOIZ8aV7iS6g?sub_confirmation=1"
+              href=`https://www.youtube.com/channel/${SOCIALMEDIA.youtubeChannel.id}`
               class="flex items-center transition-all hover:scale-105"
               target="_blank"
               rel="noopener"
+              id=`${IDS.contact.socialMediaAnchor.youtube}`
             >
               <div>
                 <Youtube class="h-10 w-10" />
               </div>
 
-              <span>/pedrothehuman</span>
+              <span>{`${SOCIALMEDIA.youtubeChannel.name}`}</span>
             </a>
           </li>
 
           <li>
             <a
-              href="https://www.linkedin.com/in/pedro-yanez/"
+              href=`https://www.linkedin.com/${SOCIALMEDIA.linkedin}`
               class="flex items-center transition-all hover:scale-105"
               target="_blank"
               rel="noopener"
+              id=`${IDS.contact.socialMediaAnchor.linkedin}`
             >
               <div>
                 <Linkedin class="h-10 w-10" />
               </div>
 
-              <span>/in/pedro-yanez</span>
+              <span>{`${SOCIALMEDIA.linkedin}`}</span>
             </a>
           </li>
         </ul>

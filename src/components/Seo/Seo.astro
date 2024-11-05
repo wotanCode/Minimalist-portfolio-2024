@@ -1,4 +1,6 @@
 ---
+import { PEDROYANEZNAME } from "@/consts/const";
+
 interface Props {
   title: string;
 }
@@ -6,7 +8,8 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<meta name="Author" content="Pedro Yanez" />
+<!--  -->
+<meta name="Author" content=`${PEDROYANEZNAME}` />
 <title>{title}</title>
-<meta name="description" content="Portafolio de Pedro Yanez @pedroelhumano" />
+<meta name="description" content=`Portafolio de ${PEDROYANEZNAME}` />
 <!-- TODO: Og Metatags -->

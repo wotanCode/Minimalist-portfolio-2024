@@ -7,25 +7,26 @@ import {
   repositoriesToShow,
 } from "@/modules/projects/ProjectList/utils/reposToShow";
 import { githubReposData } from "@/api/githubFetch";
+import { IDS } from "@/consts/const";
 
 const hasError = githubReposData.length === 0;
 
 const filteredRepos = githubReposData.filter((repo) =>
-  repositoriesToShow.includes(repo.id),
+  repositoriesToShow.includes(repo.id)
 );
 
 // Special case for 4geeksAcademy
 const backendRepo4GeeksProject = filteredRepos.find(
-  (repo) => repo.id === 398122061,
+  (repo) => repo.id === 398122061
 );
 const frontendRepo4GeeksProject = filteredRepos.find(
-  (repo) => repo.id === 395499242,
+  (repo) => repo.id === 395499242
 );
 let unified4GeeksRepo: projectCardProps | undefined;
 if (backendRepo4GeeksProject && frontendRepo4GeeksProject) {
   unified4GeeksRepo = unifyRepos(
     { data: backendRepo4GeeksProject, btnText: "Repositorio Backend" },
-    { data: frontendRepo4GeeksProject, btnText: "Repositorio Frontend" },
+    { data: frontendRepo4GeeksProject, btnText: "Repositorio Frontend" }
   );
 }
 // End of Special case for 4geeksAcademy
@@ -34,13 +35,23 @@ const finalRepoList: projectCardProps[] = filteredRepos
   .filter((repo) => !ignoreCaseForExcluding.includes(repo.id))
   .map((repo) => {
     const extraButtons = repo.homepage
-      ? [{ text: "Website", link: repo.homepage }]
+      ? [
+          {
+            text: "Website",
+            link: repo.homepage,
+            id: `${IDS.projects.websiteCardBtn}-${repo.name}`,
+          },
+        ]
       : [];
 
     return {
       name: repo.name,
       created_at: new Date(repo.created_at).toString(),
-      primaryBtn: { text: "Ver Repositorio", link: repo.html_url || "#" },
+      primaryBtn: {
+        text: "Ver Repositorio",
+        link: repo.html_url || "#",
+        id: `${IDS.projects.githubRepositoryCardBtn}-${repo.name}`,
+      },
       extraButtons,
       description: repo.description?.trim() || "",
       language: repo.language || "",
@@ -51,7 +62,7 @@ const finalRepoList: projectCardProps[] = filteredRepos
 if (unified4GeeksRepo) finalRepoList.push(unified4GeeksRepo);
 
 finalRepoList.sort(
-  (a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime(),
+  (a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
 );
 ---
 

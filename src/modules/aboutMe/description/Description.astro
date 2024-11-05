@@ -1,14 +1,16 @@
 ---
+import { IDS } from "@/consts/const";
+
 export const prerender = false;
 ---
 
 <article>
   <!-- TODO: Internacionalización -->
-  <!-- TODO: id en las constantes -->
   <p class="text-xl text-primary/90">
     ¡Hola! Soy un desarrollador con aproximadamente
-    <span id="experienceTi"></span>
-    años de experiencia en la industria TI y <span id="experienceDev"></span>
+    <span id={`${IDS.index.experienceTi}`}></span>
+    años de experiencia en la industria TI y <span
+      id={`${IDS.index.experienceDev}`}></span>
     años de trayectoria como desarrollador. Me apasiona programar, resolver problemas
     y aprender nuevas tecnologías para seguir creciendo profesionalmente. Siempre
     que puedo, disfruto enseñar a otros lo que sé. Además de mis habilidades técnicas,
@@ -18,6 +20,8 @@ export const prerender = false;
 </article>
 
 <script>
+  import { IDS } from "@/consts/const";
+
   document.addEventListener("astro:page-load", () => {
     const startTI = 1528243200;
     const startProg = 1622505600;
@@ -30,9 +34,11 @@ export const prerender = false;
     const differenceInSecondsDev = now - startProg;
     const experienceDev = (differenceInSecondsDev / secondsPerYear).toFixed();
 
-    (document.getElementById("experienceTi") as HTMLElement).textContent =
-      experienceTI;
-    (document.getElementById("experienceDev") as HTMLElement).textContent =
-      experienceDev;
+    (
+      document.getElementById(`${IDS.index.experienceTi}`) as HTMLElement
+    ).textContent = experienceTI;
+    (
+      document.getElementById(`${IDS.index.experienceDev}`) as HTMLElement
+    ).textContent = experienceDev;
   });
 </script>

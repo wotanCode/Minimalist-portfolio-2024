@@ -1,6 +1,9 @@
 ---
+import { IDS } from "@/consts/const";
+
 interface ButtonLink {
-  icon?: string;
+  // icon?: string;
+  id?: string;
   text: string;
   link: string;
 }
@@ -81,6 +84,7 @@ const formattedDate = formatDate(created_at);
     </dl>
   </div>
 
+  <!-- TODO: PAsar estos botones a un componente -->
   <div class="flex flex-row gap-4">
     <a
       href={primaryBtn.link}
@@ -88,6 +92,7 @@ const formattedDate = formatDate(created_at);
       target="_blank"
       rel="noopener"
       type="button"
+      id={`${primaryBtn.id}`}
     >
       {primaryBtn.text}
     </a>
@@ -101,6 +106,7 @@ const formattedDate = formatDate(created_at);
             target="_blank"
             rel="noopener"
             type="button"
+            id={button.id}
           >
             {button.text}
           </a>

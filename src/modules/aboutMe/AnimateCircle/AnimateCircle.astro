@@ -1,9 +1,10 @@
 ---
-//TODO: Usar el componente de imagen de astro
 import { Image } from "astro:assets";
 
 import HagalRune from "@/assets/icons/HagalRune.astro";
 import PedroYanez from "@assets/img/pedro-yanez.jpg";
+
+import { IDS, PEDROYANEZNAME } from "@/consts/const";
 ---
 
 <div class=`flex justify-center coin-container`>
@@ -17,9 +18,9 @@ import PedroYanez from "@assets/img/pedro-yanez.jpg";
     </div>
 
     <Image
-      id="pedro-yanez-photo"
+      id={`${IDS.assets.pedroYanezPhoto}`}
       src={PedroYanez}
-      alt="Pedro Yanez"
+      alt=`${PEDROYANEZNAME}`
       class="coin-face back flex aspect-square shrink-0 grow-0 justify-center rounded-full object-cover"
       quality="mid"
       loading="eager"

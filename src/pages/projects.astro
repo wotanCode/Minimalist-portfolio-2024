@@ -1,14 +1,15 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
+import ProjectList from "@/modules/projects/ProjectList/ProjectList.astro";
+
 import SectionLayout from "@/UI/SectionLayout.astro";
 import TwoColumnLayout from "@/UI/TwoColumnLayout.astro";
 import PrimaryContain from "@/UI/PrimaryContain.astro";
 
-import { PEDROYANEZ } from "@/consts/const";
-import ProjectList from "@/modules/projects/ProjectList/ProjectList.astro";
+import { PEDROYANEZNAME } from "@/consts/const";
 
-const title = `${PEDROYANEZ} - Proyectos`; //TODO: aplicar internalización
+const title = `${PEDROYANEZNAME} - Proyectos`; //TODO: aplicar internalización
 ---
 
 <Layout title={title}>

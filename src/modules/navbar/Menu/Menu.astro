@@ -1,9 +1,13 @@
 ---
 import ButtonMenu from "@/modules/navbar/ButtonMenu/ButtonMenu.astro";
-import { menuList } from "@/consts/menuList";
-import Logo from "../Logo/Logo.astro";
-import HamburgerMenu from "@/assets/icons/hamburgerMenu.astro";
+import Logo from "@/modules/navbar/Logo/Logo.astro";
+
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
+
+import HamburgerMenu from "@/assets/icons/hamburgerMenu.astro";
+
+import { menuList } from "@/consts/menuList";
+import { IDS, PEDROYANEZNAME } from "@/consts/const";
 ---
 
 <nav
@@ -17,13 +21,13 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
     <ThemeToggle />
 
     <div class="relative flex w-full flex-wrap items-center">
-      <!-- TODO: modificar ID a constante, lo ismo para los aria-controls -->
+      <!--TODO: validar si requiero de una constante para los aria-controls -->
       <button
-        data-collapse-toggle="navbar-default"
+        data-collapse-toggle=`${IDS.navbar.navbarDefault}`
         type="button"
-        aria-controls="navbar-default"
+        aria-controls=`${IDS.navbar.navbarDefault}`
         aria-expanded="false"
-        id="menu-toggle"
+        id=`${IDS.navbar.menuToggle}`
         class="h-14 w-14 rounded-lg p-2 text-primary/70 hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary/20 dark:text-primary/70 dark:hover:bg-primary/25 dark:focus:ring-primary/70 md:hidden md:rounded-none"
       >
         <!-- TODO: internalizacion -->
@@ -31,10 +35,9 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
         <HamburgerMenu />
       </button>
 
-      <!-- TODO: ID -->
       <div
         class="absolute right-16 top-1/4 z-50 hidden md:static md:right-0 md:top-0 md:block md:w-full"
-        id="navbar-default"
+        id=`${IDS.navbar.navbarDefault}`
       >
         <ul
           class="flex w-64 flex-col justify-between gap-1 rounded-lg bg-primary/20 p-4 shadow-lg md:w-full md:gap-2 md:rounded-none md:bg-inherit md:p-0 md:shadow-none"
@@ -59,7 +62,7 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
       <!--TODO: internacionalización -->
       <strong>
         Made with <span class="sr-only">Amor</span>
-        <span aria-hidden="true">❤️</span> by Pedro Yanez
+        <span aria-hidden="true">❤️</span> by {PEDROYANEZNAME}
       </strong>
     </h6>
 
@@ -70,9 +73,11 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
 </nav>
 
 <script>
+  import { IDS } from "@/consts/const";
+
   const applyMenuToggle = () => {
-    const toggleButton = document.getElementById("menu-toggle");
-    const navbar = document.getElementById("navbar-default");
+    const toggleButton = document.getElementById(`${IDS.navbar.menuToggle}`);
+    const navbar = document.getElementById(`${IDS.navbar.navbarDefault}`);
 
     if (toggleButton && navbar) {
       navbar.classList.add("hidden");
@@ -83,7 +88,7 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
   };
 
   const handleToggle = () => {
-    const navbar = document.getElementById("navbar-default");
+    const navbar = document.getElementById(`${IDS.navbar.navbarDefault}`);
     navbar?.classList.toggle("hidden");
   };
 

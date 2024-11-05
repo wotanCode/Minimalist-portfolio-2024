@@ -1,11 +1,12 @@
 ---
 import SunIcon from "@assets/icons/sun.astro";
 import MoonIcon from "@assets/icons/moon.astro";
+import { IDS } from "@/consts/const";
 ---
 
-<!-- TODO: Añadir focus, ID -->
+<!-- TODO: Añadir focus -->
 <button
-  id="themeToggle"
+  id=`${IDS.navbar.themeToggle}`
   class="inline-flex text-primary/80 transition hover:scale-125 hover:opacity-70"
 >
   <SunIcon
@@ -19,6 +20,8 @@ import MoonIcon from "@assets/icons/moon.astro";
 </button>
 
 <script is:inline>
+  // import { IDS } from "@/consts/const";
+
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
@@ -41,7 +44,10 @@ import MoonIcon from "@assets/icons/moon.astro";
     const isDark = savedTheme === "dark";
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-    const themeToggle = document.getElementById("themeToggle");
+    console.log("clickss!");
+
+    // NOTE: theme-toggle string is from IDS.navbar.themeToggle
+    const themeToggle = document.getElementById("theme-toggle");
     if (themeToggle) {
       themeToggle.checked = isDark;
       themeToggle.removeEventListener("click", handleToggleClick);

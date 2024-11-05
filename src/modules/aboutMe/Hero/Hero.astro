@@ -1,5 +1,7 @@
 ---
 import AnimateCircle from "@/modules/aboutMe/AnimateCircle/AnimateCircle.astro";
+
+import { PEDROYANEZNAME } from "@/consts/const";
 ---
 
 <div class=`flex flex-col gap-6`>
@@ -7,7 +9,7 @@ import AnimateCircle from "@/modules/aboutMe/AnimateCircle/AnimateCircle.astro";
     <AnimateCircle />
     <div class="flex flex-col justify-center text-center md:text-left">
       <h1 class="text-4xl capitalize text-primary/85 md:text-7xl">
-        Pedro Yanez
+        {PEDROYANEZNAME}
       </h1>
       <h2 class="text-3xl text-primary/85 md:text-4xl">
         Desarrollador de Software

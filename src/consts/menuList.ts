@@ -1,11 +1,12 @@
+import { IDS } from "./const";
+
 interface menuListI {
   order: number;
-  title: string; //internalizar esto
+  title: string;
   link: string;
+  id: string;
   // TODO ICON
-  // TODO: ID
   // icon: string; // Optional: Add an icon for each menu item. For example, 'user', 'code', etc.
-  // id
 }
 
 export const menuList: menuListI[] = [
@@ -13,21 +14,21 @@ export const menuList: menuListI[] = [
     order: 1,
     title: "Sobre mi",
     link: "/",
-    // id: constants.id
+    id: IDS.navbar.aboutMe,
     // icon: 'user',
   },
   {
     order: 2,
     title: "Proyectos",
     link: "/projects",
-    // id: constants.id
+    id: IDS.navbar.projects,
     // icon: 'code',
   },
   {
     order: 3,
     title: "Contacto",
     link: "/contact",
-    // id: constants.id
+    id: IDS.navbar.contact,
     // icon: 'mail',
   },
 ];
