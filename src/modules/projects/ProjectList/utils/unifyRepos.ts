@@ -13,8 +13,18 @@ export function unifyRepos(
         new Date(repo2.data.created_at as Date).getTime(),
       ),
     ).toString(),
-    primaryBtn: { text: repo1.btnText, link: repo1.data.html_url || "#", id: `${IDS.projects.githubRepositoryCardBtn}-${repo1.data.name}` },
-    extraButtons: [{ text: repo2.btnText, link: repo2.data.html_url || "#", id: `${IDS.projects.githubRepositoryCardBtn}-${repo2.data.name}` }],
+    primaryBtn: {
+      text: repo1.btnText,
+      link: repo1.data.html_url || "#",
+      id: `${IDS.projects.githubRepositoryCardBtn}-${repo1.data.name}`,
+    },
+    extraButtons: [
+      {
+        text: repo2.btnText,
+        link: repo2.data.html_url || "#",
+        id: `${IDS.projects.githubRepositoryCardBtn}-${repo2.data.name}`,
+      },
+    ],
     description: `${repo1.data.description || ""}`.trim(),
     language:
       repo1.data.language === repo2.data.language

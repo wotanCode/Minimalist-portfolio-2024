@@ -9,7 +9,7 @@ export const SOCIALMEDIA = {
     name: "wotanCode",
   },
   linkedin: "in/pedro-yanez",
-}
+};
 
 export const IDS = {
   assets: {
@@ -32,7 +32,7 @@ export const IDS = {
   },
   index: {
     experienceTi: "experience-ti",
-    experienceDev: "experience-dev"
+    experienceDev: "experience-dev",
   },
   projects: {
     githubRepositoryCardBtn: "repository",
@@ -43,6 +43,6 @@ export const IDS = {
       github: "social-media-github",
       linkedin: "social-media-linkedin",
       youtube: "social-media-youTube",
-    }
-  }
+    },
+  },
 };
