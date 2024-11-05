@@ -1,6 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
+import SocialMediaButton from "@/modules/contact/SocialMediaButton.astro";
+
 import GithubMark from "@/assets/icons/github-mark.astro";
 import Youtube from "@/assets/icons/youtube.astro";
 import Linkedin from "@/assets/icons/linkedin.astro";
@@ -34,53 +36,34 @@ const title = `${PEDROYANEZNAME} - Contacto`; //TODO: aplicar internalización
 
       <InfoBox boxTitle="Redes sociales">
         <ul class="flex flex-col gap-4 text-lg">
-          <!--TODO: llevar estos links a un componente -->
           <li>
-            <a
-              href=`https://github.com/${SOCIALMEDIA.githubUser}`
-              class="flex items-center transition-all hover:scale-105"
-              target="_blank"
-              rel="noopener"
-              id=`${IDS.contact.socialMediaAnchor.github}`
+            <SocialMediaButton
+              link=`https://github.com/${SOCIALMEDIA.githubUser}`
+              text={SOCIALMEDIA.githubUser}
+              id={IDS.contact.socialMediaAnchor.github}
             >
-              <div>
-                <GithubMark class="h-9 w-10" />
-              </div>
-
-              <span>{`${SOCIALMEDIA.githubUser}`}</span>
-            </a>
+              <GithubMark class="h-9 w-10" />
+            </SocialMediaButton>
           </li>
 
           <li>
-            <a
-              href=`https://www.youtube.com/channel/${SOCIALMEDIA.youtubeChannel.id}`
-              class="flex items-center transition-all hover:scale-105"
-              target="_blank"
-              rel="noopener"
-              id=`${IDS.contact.socialMediaAnchor.youtube}`
+            <SocialMediaButton
+              link=`https://www.youtube.com/channel/${SOCIALMEDIA.youtubeChannel.id}`
+              id={IDS.contact.socialMediaAnchor.youtube}
+              text={SOCIALMEDIA.youtubeChannel.name}
             >
-              <div>
-                <Youtube class="h-10 w-10" />
-              </div>
-
-              <span>{`${SOCIALMEDIA.youtubeChannel.name}`}</span>
-            </a>
+              <Youtube class="h-10 w-10" />
+            </SocialMediaButton>
           </li>
 
           <li>
-            <a
-              href=`https://www.linkedin.com/${SOCIALMEDIA.linkedin}`
-              class="flex items-center transition-all hover:scale-105"
-              target="_blank"
-              rel="noopener"
-              id=`${IDS.contact.socialMediaAnchor.linkedin}`
+            <SocialMediaButton
+              id={IDS.contact.socialMediaAnchor.linkedin}
+              text={SOCIALMEDIA.linkedin}
+              link={`https://www.linkedin.com/${SOCIALMEDIA.linkedin}`}
             >
-              <div>
-                <Linkedin class="h-10 w-10" />
-              </div>
-
-              <span>{`${SOCIALMEDIA.linkedin}`}</span>
-            </a>
+              <Linkedin class="h-10 w-10" />
+            </SocialMediaButton>
           </li>
         </ul>
       </InfoBox>
