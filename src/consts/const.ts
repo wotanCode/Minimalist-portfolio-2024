@@ -29,6 +29,7 @@ export const IDS = {
     aboutMe: "about-me",
     projects: "projects",
     contact: "contact",
+    portfolioRepository: "portfolio-repository",
   },
   index: {
     experienceTi: "experience-ti",

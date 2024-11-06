@@ -5,9 +5,10 @@ import Logo from "@/modules/navbar/Logo/Logo.astro";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
 
 import HamburgerMenu from "@/assets/icons/hamburgerMenu.astro";
+import GithubMark from "@/assets/icons/github-mark.astro";
 
 import { menuList } from "@/consts/menuList";
-import { IDS, PEDROYANEZNAME } from "@/consts/const";
+import { IDS, PEDROYANEZNAME, SOCIALMEDIA } from "@/consts/const";
 ---
 
 <nav
@@ -66,9 +67,25 @@ import { IDS, PEDROYANEZNAME } from "@/consts/const";
       </strong>
     </h6>
 
-    <h6 class="text-xs text-primary/80">
-      ®Casi todos los derechos reservados...
+    <h6 class="flex items-center gap-1 text-center text-xs text-primary/80">
+      <!-- TODO: Cuando termine el proyecto, colocar en el href URL refereciado al repositorio -->
+      <a
+        class="flex items-center gap-1 rounded-lg border-2 p-1 text-center transition hover:scale-105 hover:opacity-70"
+        href=`https://github.com/${SOCIALMEDIA.githubUser}/`
+        target="_blank"
+        rel="noopener"
+        id={IDS.navbar.portfolioRepository}
+      >
+        <GithubMark id=`-${IDS.navbar.portfolioRepository}` class="h-4 w-4" />
+
+        <span>Repositorio</span>
+      </a>
+      <span>del proyecto</span>
     </h6>
+
+    <span class="flex text-xs text-primary/80"
+      >® Casi todos los derechos reservados...</span
+    >
   </footer>
 </nav>
 

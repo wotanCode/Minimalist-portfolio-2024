@@ -9,7 +9,7 @@ import { IDS } from "@/consts/const";
   viewBox="0 0 97.707 97.707"
   class={Astro.props.class}
   role="img"
-  id=`${IDS.assets.githubIcon}`
+  id=`${IDS.assets.githubIcon}${Astro.props.id ?? '' }`
 >
   <path
     fill="currentColor"
