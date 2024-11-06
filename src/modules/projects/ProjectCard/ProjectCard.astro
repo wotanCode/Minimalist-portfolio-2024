@@ -54,7 +54,7 @@ const formattedDate = formatDate(created_at);
       {
         description && (
           <div class="flex flex-row">
-            <dt>Description:&nbsp;</dt>
+            <dt>Descripción:&nbsp;</dt>
             <dd>{description}</dd>
           </div>
         )
@@ -63,7 +63,7 @@ const formattedDate = formatDate(created_at);
       {
         language && (
           <div class="flex flex-row">
-            <dt>Language:&nbsp;</dt>
+            <dt>Lenguaje de programación:&nbsp;</dt>
             <dd>{language}</dd>
           </div>
         )
@@ -72,14 +72,14 @@ const formattedDate = formatDate(created_at);
       {
         topics && topics.length > 0 && (
           <div class="flex flex-row">
-            <dt>Topics:&nbsp;</dt>
+            <dt>Temas:&nbsp;</dt>
             <dd>{formatTopics(topics)}</dd>
           </div>
         )
       }
 
       <div class="flex flex-row">
-        <dt>Created At:&nbsp;</dt>
+        <dt>Creado en:&nbsp;</dt>
         <dd>{formattedDate}</dd>
       </div>
     </dl>
