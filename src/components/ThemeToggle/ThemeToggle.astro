@@ -4,7 +4,6 @@ import MoonIcon from "@assets/icons/moon.astro";
 import { IDS } from "@/consts/const";
 ---
 
-<!-- TODO: Añadir focus -->
 <button
   id=`${IDS.navbar.themeToggle}`
   class="inline-flex text-primary/80 transition hover:scale-125 hover:opacity-70"
@@ -20,8 +19,6 @@ import { IDS } from "@/consts/const";
 </button>
 
 <script is:inline>
-  // import { IDS } from "@/consts/const";
-
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
