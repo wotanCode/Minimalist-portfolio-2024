@@ -3,9 +3,11 @@ export interface SocialMediaButtonProps {
   id: string;
   text: string;
   link: string;
+  accessibilityText: string;
 }
 
-const { id, text, link } = Astro.props as SocialMediaButtonProps;
+const { id, text, link, accessibilityText } =
+  Astro.props as SocialMediaButtonProps;
 ---
 
 <a
@@ -14,6 +16,8 @@ const { id, text, link } = Astro.props as SocialMediaButtonProps;
   target="_blank"
   rel="noopener"
   id={id}
+  title={accessibilityText}
+  aria-label={accessibilityText}
 >
   <div class="text-primary/80 dark:text-primary">
     <slot />

@@ -22,7 +22,6 @@ import { IDS, PEDROYANEZNAME, SOCIALMEDIA } from "@/consts/const";
     <ThemeToggle />
 
     <div class="relative flex w-full flex-wrap items-center">
-      <!--TODO: validar si requiero de una constante para los aria-controls -->
       <button
         data-collapse-toggle=`${IDS.navbar.navbarDefault}`
         type="button"
@@ -76,6 +75,7 @@ import { IDS, PEDROYANEZNAME, SOCIALMEDIA } from "@/consts/const";
         target="_blank"
         rel="noopener"
         id={IDS.navbar.portfolioRepository}
+        aria-label="Ir al repositorio del proyecto"
       >
         <GithubMark id=`-${IDS.navbar.portfolioRepository}` class="h-4 w-4" />
 
