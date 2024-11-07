@@ -1,15 +1,60 @@
 ---
+import "@fontsource-variable/jost";
+import jost from "@fontsource-variable/jost/files/jost-latin-wght-normal.woff2";
+
 import { PEDROYANEZNAME } from "@/consts/const";
 
 interface Props {
   title: string;
+  description?: string;
+  canonical?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = `Portafolio de ${PEDROYANEZNAME}, desarrollador fullstack`,
+  canonical,
+} = Astro.props as Props;
+
+const determineCanonicalURL = () => {
+  if (Astro.url.host.includes("localhost")) return "http://localhost:4321";
+  return canonical || Astro.url.pathname;
+};
+
+const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 ---
 
-<!--  -->
-<meta name="Author" content=`${PEDROYANEZNAME}` />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <title>{title}</title>
-<meta name="description" content=`Portafolio de ${PEDROYANEZNAME}` />
-<!-- TODO: Og Metatags -->
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+<meta name="author" content={PEDROYANEZNAME} />
+<meta name="description" content={description} />
+
+<link rel="canonical" href={canonicalURL} />
+<meta name="theme-color" content="#000000" />
+
+<!-- Social Media Optimization -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content={PEDROYANEZNAME} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+
+<!-- Performance Optimization -->
+<link rel="preload" href={jost} as="font" type="font/woff2" crossorigin />
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="theme-color" content="#ffffff" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<meta
+  name="keywords"
+  content=`Portafolio, ${PEDROYANEZNAME}, desarrollo web, fullstack, developer, programador`
+/>

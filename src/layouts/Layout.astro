@@ -18,12 +18,6 @@ const { currentLocale } = Astro;
 <!doctype html>
 <html lang={currentLocale}>
   <head>
-    <meta charset="UTF-8" />
-
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- <meta name="generator" content={Astro.generator} /> averiguar que es esto -->
-    <!-- TODO: verificar si SEO debe estar aquí enviarlo a otro componente que use el layouut -->
     <Seo title={title} />
     <ViewTransitions />
   </head>
