@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 import vercel from "@astrojs/vercel/serverless";
 
+import vue from "@astrojs/vue";
+
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -14,7 +16,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  integrations: [tailwind()],
+  integrations: [tailwind(), vue()],
   output: "hybrid",
   adapter: vercel(),
 });
