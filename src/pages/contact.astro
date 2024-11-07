@@ -3,9 +3,12 @@ import Layout from "@/layouts/Layout.astro";
 
 import SocialMediaButton from "@/modules/contact/SocialMediaButton.astro";
 
+import Counter from "@/components/Counter/Counter.vue";
+
 import GithubMark from "@/assets/icons/github-mark.astro";
 import Youtube from "@/assets/icons/youtube.astro";
 import Linkedin from "@/assets/icons/linkedin.astro";
+import Coin from "@/assets/icons/coin.astro";
 
 import SectionLayout from "@/UI/SectionLayout.astro";
 import TwoColumnLayout from "@/UI/TwoColumnLayout.astro";
@@ -32,6 +35,24 @@ const title = `${PEDROYANEZNAME} - Contacto`; //TODO: aplicar internalización
             aportando valor. ¡Hablemos y creemos algo increíble juntos!
           </p>
         </article>
+
+        <p class="text-xl">
+          Ademas, no olvides llevarte unos pedrocoins. ¡Algún día valdran mucho
+          dinero!
+        </p>
+
+        <div class="flex items-center gap-1 transition hover:scale-110">
+          <div class="h-6 w-6">
+            <Coin />
+          </div>
+
+          <Counter
+            client:visible
+            transition:persist="counter"
+            initialValue={0}
+            transition:persist-props
+          />
+        </div>
       </PrimaryContain>
 
       <InfoBox boxTitle="Redes sociales">

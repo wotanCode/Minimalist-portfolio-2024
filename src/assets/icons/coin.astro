@@ -1,0 +1,33 @@
+---
+import { IDS } from "@/consts/const";
+---
+
+<svg
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+  id={IDS.assets.pedroCoin}
+  class={Astro.props.class}
+>
+  <circle
+    cx="50"
+    cy="50"
+    r="45"
+    fill="#FFD700"
+    stroke="#DAA520"
+    stroke-width="5"></circle>
+
+  <circle cx="50" cy="50" r="35" fill="#FFC107"></circle>
+
+  <text
+    x="50"
+    y="57"
+    font-size="64"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    fill="#8B4513"
+  >
+    $
+  </text>
+</svg>

@@ -19,6 +19,7 @@ export const IDS = {
     sun: "sun",
     hamburgerMenu: "hamburger-menu",
     pedroYanezPhoto: "pedro-yanez-photo",
+    pedroCoin: "pedrocoin",
   },
   navbar: {
     themeToggle: "theme-toggle",
@@ -28,10 +29,6 @@ export const IDS = {
     projects: "projects",
     contact: "contact",
     portfolioRepository: "portfolio-repository",
-  },
-  index: {
-    experienceTi: "experience-ti",
-    experienceDev: "experience-dev",
   },
   projects: {
     githubRepositoryCardBtn: "repository",

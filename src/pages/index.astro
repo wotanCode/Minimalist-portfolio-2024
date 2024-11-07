@@ -4,6 +4,10 @@ import Layout from "@/layouts/Layout.astro";
 import Description from "@/modules/aboutMe/description/Description.astro";
 import Hero from "@/modules/aboutMe/Hero/Hero.astro";
 
+import Counter from "@/components/Counter/Counter.vue";
+
+import Coin from "@/assets/icons/coin.astro";
+
 import { PEDROYANEZNAME } from "@/consts/const";
 
 const title = `${PEDROYANEZNAME}`;
@@ -14,5 +18,18 @@ const title = `${PEDROYANEZNAME}`;
     <Hero />
 
     <Description />
+
+    <div class="flex items-center gap-1 transition hover:scale-110">
+      <div class="h-6 w-6">
+        <Coin />
+      </div>
+
+      <Counter
+        client:visible
+        transition:persist="counter"
+        initialValue={0}
+        transition:persist-props
+      />
+    </div>
   </section>
 </Layout>

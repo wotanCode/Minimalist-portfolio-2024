@@ -3,6 +3,10 @@ import Layout from "@/layouts/Layout.astro";
 
 import ProjectList from "@/modules/projects/ProjectList/ProjectList.astro";
 
+import Counter from "@/components/Counter/Counter.vue";
+
+import Coin from "@/assets/icons/coin.astro";
+
 import SectionLayout from "@/UI/SectionLayout.astro";
 import TwoColumnLayout from "@/UI/TwoColumnLayout.astro";
 import PrimaryContain from "@/UI/PrimaryContain.astro";
@@ -17,6 +21,19 @@ const title = `${PEDROYANEZNAME} - Proyectos`; //TODO: aplicar internalización
     <TwoColumnLayout>
       <PrimaryContain>
         <ProjectList />
+
+        <div class="flex items-center gap-1 transition hover:scale-110">
+          <div class="h-6 w-6">
+            <Coin />
+          </div>
+
+          <Counter
+            client:visible
+            transition:persist="counter"
+            initialValue={0}
+            transition:persist-props
+          />
+        </div>
       </PrimaryContain>
     </TwoColumnLayout>
   </SectionLayout>
