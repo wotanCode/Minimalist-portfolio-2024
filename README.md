@@ -1,4 +1,4 @@
-# Portfolio Pedro Yanez
+# Minimalist Portfolio Pedro Yanez
 
 ### ¡Sigueme en mis redes!
 
