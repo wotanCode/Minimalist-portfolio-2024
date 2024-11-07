@@ -1,5 +1,7 @@
 # Minimalist Portfolio Pedro Yanez
 
+Made with ❤️ Love
+
 ### ¡Sigueme en mis redes!
 
 [![GitHub Followers](https://img.shields.io/github/followers/wotanCode?style=social)](https://github.com/wotanCode)
