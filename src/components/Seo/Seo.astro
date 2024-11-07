@@ -43,7 +43,7 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 <meta property="og:site_name" content={PEDROYANEZNAME} />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_ES" />
-<meta property="og:image" content="/pedroyanezogg.jpg" />
+<meta property="og:image" content={new URL('/pedroyanezogg.jpg', Astro.url)} />
 
 <!-- Performance Optimization -->
 <link rel="preload" href={jost} as="font" type="font/woff2" crossorigin />
