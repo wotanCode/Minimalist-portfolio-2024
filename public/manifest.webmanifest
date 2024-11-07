@@ -1,0 +1,19 @@
+{
+  "name": "Portafolio de Pedro Yanez",
+  "short_name": "Portafolio Pedro",
+  "description": "Portafolio profesional de Pedro Yanez, desarrollador fullstack con experiencia en proyectos web y aplicaciones.",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "es",
+  "orientation": "portrait-primary",
+  "display_override": [
+    "fullscreen",
+    "standalone",
+    "minimal-ui"
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
