@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 interface CounterProps {
   initialValue: number;
@@ -15,8 +15,10 @@ function increment() {
 </script>
 
 <template>
-  <button class="flex items-center text-xl text-primary/90 rounded-lg border-2 p-1 border-primary/40"
-    @click="increment">
+  <button
+    class="flex items-center rounded-lg border-2 border-primary/40 p-1 text-xl text-primary/90"
+    @click="increment"
+  >
     pedrocoins: {{ count }}
   </button>
 </template>
