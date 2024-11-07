@@ -1,5 +1,3 @@
-import ThemeToggle from "@/components/ThemeToggle/ThemeToggle.astro";
-
 export const PEDROYANEZNAME = "Pedro Yanez";
 
 export const SOCIALMEDIA = {
