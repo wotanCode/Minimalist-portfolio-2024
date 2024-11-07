@@ -1,7 +1,14 @@
 {
-  "name": "majestic-meteorite",
+  "name": "pedro-yanez-portfolio-2024",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Mi portafolio web profesional hecho con Astro.js y Tailwind CSS edición 2024",
+  "author": "Pedro Yanez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wotanCode/Simple-portfolio-2024.git"
+  },
   "scripts": {
     "format": "prettier --write src",
     "format:check": "prettier --check src",
