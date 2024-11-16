@@ -35,7 +35,7 @@ export const menuList: menuListI[] = [
     order: 4,
     title: "Acerca de",
     link: "/about",
-    id: IDS.navbar.contact,
+    id: IDS.navbar.aboutProject,
     // icon: 'mail',
   },
 ];

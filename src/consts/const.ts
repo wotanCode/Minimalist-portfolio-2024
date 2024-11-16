@@ -28,6 +28,7 @@ export const IDS = {
     aboutMe: "about-me",
     projects: "projects",
     contact: "contact",
+    aboutProject: "about-this-project",
     portfolioRepository: "portfolio-repository",
   },
   projects: {
