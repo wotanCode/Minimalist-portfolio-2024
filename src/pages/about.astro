@@ -1,0 +1,113 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import Counter from "@/components/Counter/Counter.vue";
+
+import Coin from "@/assets/icons/coin.astro";
+
+import SectionLayout from "@/UI/SectionLayout.astro";
+import TwoColumnLayout from "@/UI/TwoColumnLayout.astro";
+import PrimaryContain from "@/UI/PrimaryContain.astro";
+
+import { PEDROYANEZNAME } from "@/consts/const";
+
+const title = `${PEDROYANEZNAME} - Acerca de`; //TODO: aplicar internalización
+---
+
+<Layout title={title}>
+  <SectionLayout sectionTitle="Acerca de este proyecto">
+    <TwoColumnLayout>
+      <PrimaryContain>
+        <article class="flex flex-col text-balance text-xl">
+          <p class="mb-4">
+            Este sitio web fue diseñado con un enfoque minimalista, buscando una
+            experiencia clara y directa para el usuario. Incorpora sistemas de
+            accesibilidad que permiten la interacción a través del teclado y
+            cuenta con optimizaciones para mejorar la experiencia de los
+            usuarios con lectores de pantalla. Además, está equipado con
+            metadatos que favorecen el SEO, mejorando su visibilidad en los
+            motores de búsqueda. Finalmente, el diseño es completamente
+            responsivo, adaptándose a diferentes tamaños de pantalla para
+            garantizar una navegación óptima en cualquier dispositivo.
+          </p>
+
+          <div class="mb-4">
+            <h4 class="mb-2">🛠️ Stack Tecnológico</h4>
+
+            <ul class="flex flex-col gap-4">
+              <li class="flex flex-col">
+                <a href="https://astro.build/">
+                  <img
+                    src="https://img.shields.io/badge/Astro-fff?style=for-the-badge&logo=astro&logoColor=bd303a&color=352563"
+                    alt="Astro"
+                  />
+                </a>
+
+                <p class="text-xl">
+                  Un framework web ideal para sitios centrados en contenido.
+                </p>
+              </li>
+
+              <li class="flex flex-col">
+                <a href="https://www.typescriptlang.org/">
+                  <img
+                    src="https://img.shields.io/badge/Typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&color=blue"
+                    alt="Typescript"
+                  />
+                </a>
+
+                <p class="text-xle">
+                  JavaScript con tipado estático para mayor seguridad y
+                  claridad.
+                </p>
+              </li>
+
+              <li class="flex flex-col">
+                <a href="https://vuejs.org/">
+                  <img
+                    src="https://img.shields.io/badge/Vue-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white"
+                    alt="Vue"
+                  />
+                </a>
+
+                <p class="text-xl">
+                  Un framework progresivo para construir interfaces de usuario
+                  dinámicas.
+                </p>
+              </li>
+
+              <li class="flex flex-col text-base">
+                <a href="https://tailwindcss.com/">
+                  <img
+                    src="https://img.shields.io/badge/Tailwind-ffffff?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8"
+                    alt="Tailwind CSS"
+                  />
+                </a>
+
+                <p class="text-xl">
+                  Un framework CSS para crear diseños personalizados de forma
+                  eficiente.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <hr />
+
+        <div class="flex items-center gap-1 transition hover:scale-105">
+          <div class="h-6 w-6">
+            <Coin />
+          </div>
+
+          <Counter
+            client:visible
+            transition:persist="counter"
+            initialValue={0}
+            transition:persist-props
+          />
+        </div>
+      </PrimaryContain>
+    </TwoColumnLayout>
+  </SectionLayout>
+</Layout>
